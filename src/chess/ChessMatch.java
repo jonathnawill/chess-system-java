@@ -1,5 +1,7 @@
 package chess;
 
+import java.awt.event.HierarchyBoundsAdapter;
+
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
@@ -40,6 +42,7 @@ public class ChessMatch {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
 		validateSourcePosition(source);
+		validateTargetPosition(source, target);
 		Piece capturedPiece = makemove(source, target);
 		return (ChessPiece) capturedPiece;
 	}
@@ -57,6 +60,12 @@ public class ChessMatch {
 		}
 		if(!board.pieces(position).isThereAnyPossibleMove()) {
 			throw new ChessException("There is no possible moves for the choosen piece");
+		}
+	}
+	
+	private void validateTargetPosition (Position source, Position target) {
+		if(!board.pieces(source).possibleMove(target)) {
+			throw new ChessException("The chosen piece can't move to target position");
 		}
 	}
 
