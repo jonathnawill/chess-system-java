@@ -1,7 +1,5 @@
 package chess;
 
-import java.awt.event.HierarchyBoundsAdapter;
-
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
@@ -38,6 +36,15 @@ public class ChessMatch {
 	// peça de origem na posição de destino. Ele retorna a peça capturada (se
 	// houver) para que possa ser tratada pelo chamador.
 
+	
+	public boolean[][]possibleMoves(ChessPosition sourcePosition){
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.pieces(position).possibleMoves();
+		
+	}
+	
+	
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
