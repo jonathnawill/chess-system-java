@@ -1,6 +1,5 @@
 package chess;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -70,13 +69,17 @@ public class ChessMatch {
 	}
 
 	// Esses dois métodos fazem parte de uma classe de xadrez. O método
-	// performChessMove() é responsável por realizar um movimento de peça de xadrez,
-	// movendo uma peça de uma posição de origem (sourcePosition) para uma posição
+	// performChessMove() é responsável por realizar um movimento de peça de
+	// xadrez,
+	// movendo uma peça de uma posição de origem (sourcePosition) para uma
+	// posição
 	// de destino (targetPosition). Ele primeiro converte as posições de xadrez em
 	// posições regulares, usando o método toPosition(). Ele então valida se a
 	// posição de origem é válida e, em seguida, chama o método makemove() para
-	// efetivamente realizar o movimento e capturar a peça de destino (se houver). O
-	// método makemove() remove as peças de origem e destino do tabuleiro e coloca a
+	// efetivamente realizar o movimento e capturar a peça de destino (se houver).
+	// O
+	// método makemove() remove as peças de origem e destino do tabuleiro e coloca
+	// a
 	// peça de origem na posição de destino. Ele retorna a peça capturada (se
 	// houver) para que possa ser tratada pelo chamador.
 
@@ -138,7 +141,7 @@ public class ChessMatch {
 			throw new IllegalStateException("There is no piece to be promoted");
 		}
 		if (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
-			throw new InvalidParameterException("Invalid type for promotion");
+			return promoted;
 		}
 
 		Position pos = promoted.getChessPosition().toPosition();
