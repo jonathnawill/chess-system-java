@@ -5,15 +5,15 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class King extends ChessPiece {
+public class Knight extends ChessPiece {
 
-	public King(Board board, Color color) {
+	public Knight(Board board, Color color) {
 		super(board, color);
 	}
 
 	@Override
 	public String toString() {
-		return "R";
+		return "C";
 	}
 
 	private boolean CanMove(Position position) {
@@ -26,8 +26,8 @@ public class King extends ChessPiece {
 	@Override
 	public boolean[][] possibleMoves() {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		int[] row = { -1, -1, -1, 0, 0, 1, 1, 1 };
-		int[] col = { -1, 0, 1, -1, 1, -1, 0, 1 };
+		int[] row = { -1, -2, -2, -1, +1, +2, +2, +1 };
+		int[] col = { -2, -1, +1, +2, +2, +1, -1, -2 };
 		Position p = new Position(0, 0);
 
 		for (int i = 0; i < 8; i++) {
