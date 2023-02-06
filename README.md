@@ -52,7 +52,7 @@ Peças: Pawn (Peão), Rook (Torre), Knight (Cavalo), Bishop (Bispo), Queen (Rain
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/acenelio/chess-system-design/blob/master/chess-system-design.png)
   
-## ♟️ Instalacao
+## ♟️ Instalação
 
 1. Faça o dowload e extração do projeto. 
 2. Abra um terminal ([Git Bash](https://git-scm.com/book/pt-pt/v2/Appendix-A%3A-Git-em-Outros-Ambientes-Git-in-Bash) é o recomendado, pois é colorido)
